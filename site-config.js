@@ -14,10 +14,38 @@ const siteConfig = {
     subtitle: "Opens After Dark",
     lead: "Slip past the leaves. Follow the bruised glow of fig skin and split pomegranate. A table is waiting.",
     hostLine: "Hosted by OMA",
-    primaryCta: "Enter the orchard",
-    primaryHref: "#reveal",
-    secondaryCta: "Answer the summons",
+    guide: [
+      "Read the invitation",
+      "Choose a fruit alias",
+      "Confirm your attendance"
+    ],
+    primaryCta: "How this works",
+    primaryHref: "#how-it-works",
+    secondaryCta: "RSVP now",
     secondaryHref: "#rsvp"
+  },
+  journey: {
+    kicker: "How To Enter",
+    heading: "A clear path through the orchard.",
+    intro: "This invite has a mood, but it should still be easy to use.",
+    steps: [
+      {
+        title: "Read",
+        body: "Start with the clues and event details so you know what kind of night you are stepping into."
+      },
+      {
+        title: "Name",
+        body: "Enter your real name once so the host can identify you in the repo-side RSVP log."
+      },
+      {
+        title: "Alias",
+        body: "Generate a fruit pseudonym and choose the one you want other guests to see on the attendee wall."
+      },
+      {
+        title: "Confirm",
+        body: "Choose yes, maybe, or no. Only confirmed guests are shown publicly on the site."
+      }
+    ]
   },
   reveal: {
     kicker: "Unseal The Clues",

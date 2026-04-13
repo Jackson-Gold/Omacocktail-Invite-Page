@@ -55,7 +55,7 @@
       <section class="hero section" aria-labelledby="hero-title-main">
         <div class="hero__glow hero__glow--fig" aria-hidden="true"></div>
         <div class="hero__glow hero__glow--seed" aria-hidden="true"></div>
-        <div class="hero__content panel panel--hero" data-reveal>
+        <div class="hero__content panel panel--hero">
           <p id="hero-eyebrow" class="eyebrow">A Midnight Summons</p>
           <h1 id="hero-title-main" class="hero__title">
             <span id="hero-title">The Orchard</span>
@@ -65,11 +65,27 @@
             Slip past the leaves. Follow the bruised glow of fig skin and split pomegranate. A table is waiting.
           </p>
           <p id="hero-host-line" class="hero__host-line">Hosted by OMA</p>
+          <ol id="hero-guide" class="hero-guide" aria-label="How to use this invite">
+            <li class="hero-guide__item">Read the invitation</li>
+            <li class="hero-guide__item">Choose a fruit alias</li>
+            <li class="hero-guide__item">Confirm your attendance</li>
+          </ol>
           <div class="hero__actions">
-            <a id="hero-primary-link" class="button button--solid" href="#reveal">Enter the orchard</a>
-            <a id="hero-secondary-link" class="button button--ghost" href="#rsvp">Answer the summons</a>
+            <a id="hero-primary-link" class="button button--solid" href="#how-it-works">How this works</a>
+            <a id="hero-secondary-link" class="button button--ghost" href="#rsvp">RSVP now</a>
           </div>
         </div>
+      </section>
+
+      <section id="how-it-works" class="section section--narrow" aria-labelledby="journey-heading">
+        <div class="section__intro" data-reveal>
+          <p id="journey-kicker" class="eyebrow">How To Enter</p>
+          <h2 id="journey-heading" class="section__heading">A clear path through the orchard.</h2>
+          <p id="journey-intro" class="section__copy">
+            This invite has a mood, but it should still be easy to use.
+          </p>
+        </div>
+        <div id="journey-steps" class="journey-grid" data-reveal></div>
       </section>
 
       <section id="reveal" class="section section--narrow" aria-labelledby="reveal-heading">
@@ -148,8 +164,8 @@
               </div>
 
               <p id="rsvp-helper" class="field__hint field__hint--strong">
-                Your real name is stored in the repo-side RSVP log for the host. Your alias, avatar, and attendance
-                status are what guests see on the page.
+                Your real name is stored in the repo-side RSVP log for the host. Only confirmed aliases appear publicly
+                on the page.
               </p>
 
               <div class="form-actions">
@@ -171,10 +187,10 @@
               Fruit names already whispering back.
             </h2>
             <p id="attendee-body" class="section__copy attendee-wall__copy">
-              This wall only shows pseudonyms, avatars, and attendance status.
+              This wall only shows confirmed fruit pseudonyms who said yes to the invitation.
             </p>
             <ul id="attendee-list" class="attendee-list" aria-live="polite"></ul>
-            <p id="attendee-empty" class="attendee-empty">No aliases have bloomed yet. Yours could be the first.</p>
+            <p id="attendee-empty" class="attendee-empty">No confirmed aliases have bloomed yet. Yours could be the first.</p>
           </aside>
         </div>
       </section>
@@ -250,6 +266,9 @@
       setText("hero-subtitle", siteConfig.hero.subtitle);
       setText("hero-lead", siteConfig.hero.lead);
       setText("hero-host-line", siteConfig.hero.hostLine);
+      setText("journey-kicker", siteConfig.journey.kicker);
+      setText("journey-heading", siteConfig.journey.heading);
+      setText("journey-intro", siteConfig.journey.intro);
       setText("reveal-kicker", siteConfig.reveal.kicker);
       setText("reveal-heading", siteConfig.reveal.heading);
       setText("reveal-intro", siteConfig.reveal.intro);
@@ -280,11 +299,20 @@
 
       const primaryLink = byId("hero-primary-link");
       const secondaryLink = byId("hero-secondary-link");
+      const heroGuide = byId("hero-guide");
 
       primaryLink.textContent = siteConfig.hero.primaryCta;
       primaryLink.href = siteConfig.hero.primaryHref;
       secondaryLink.textContent = siteConfig.hero.secondaryCta;
       secondaryLink.href = siteConfig.hero.secondaryHref;
+
+      heroGuide.textContent = "";
+      siteConfig.hero.guide.forEach((step) => {
+        const item = document.createElement("li");
+        item.className = "hero-guide__item";
+        item.textContent = step;
+        heroGuide.append(item);
+      });
 
       setMeta("meta-description", siteConfig.page.description);
       setMeta("og-title", siteConfig.page.socialTitle);
@@ -317,6 +345,27 @@
 
         card.append(label, value, note);
         detailGrid.append(card);
+      });
+
+      const journeySteps = byId("journey-steps");
+      siteConfig.journey.steps.forEach((step, index) => {
+        const card = document.createElement("article");
+        card.className = "journey-card";
+
+        const number = document.createElement("p");
+        number.className = "journey-card__number";
+        number.textContent = String(index + 1).padStart(2, "0");
+
+        const title = document.createElement("h3");
+        title.className = "journey-card__title";
+        title.textContent = step.title;
+
+        const body = document.createElement("p");
+        body.className = "journey-card__body";
+        body.textContent = step.body;
+
+        card.append(number, title, body);
+        journeySteps.append(card);
       });
 
       const revealList = byId("reveal-lines");
@@ -603,6 +652,9 @@
         );
 
         revealables.forEach((node) => observer.observe(node));
+        window.setTimeout(() => {
+          revealables.forEach((node) => node.classList.add("is-visible"));
+        }, 1200);
       }
     </script>
   </body>
