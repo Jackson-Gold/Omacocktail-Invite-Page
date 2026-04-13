@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="72" x2="1014" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120914"/>
+      <stop offset="0.5" stop-color="#14080F"/>
+      <stop offset="1" stop-color="#09050D"/>
+    </linearGradient>
+    <radialGradient id="figGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(934 176) rotate(121.607) scale(272.191 228.888)">
+      <stop stop-color="#B35AA0" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#B35AA0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="seedGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(204 470) rotate(28.0913) scale(238.472 214.03)">
+      <stop stop-color="#C6465D" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#C6465D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="178" y1="94" x2="980" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#figGlow)"/>
+  <rect width="1200" height="630" fill="url(#seedGlow)"/>
+
+  <rect x="84" y="72" width="1032" height="486" rx="34" fill="url(#card)" stroke="#D8B36D" stroke-opacity="0.18"/>
+
+  <ellipse cx="946" cy="190" rx="138" ry="178" transform="rotate(18 946 190)" fill="#4A1A49" fill-opacity="0.76"/>
+  <ellipse cx="946" cy="190" rx="110" ry="144" transform="rotate(18 946 190)" fill="#6B2A69" fill-opacity="0.82"/>
+  <circle cx="930" cy="154" r="16" fill="#F7E9E0" fill-opacity="0.18"/>
+
+  <circle cx="218" cy="458" r="102" fill="#66132A" fill-opacity="0.78"/>
+  <circle cx="218" cy="458" r="74" fill="#8F1737" fill-opacity="0.82"/>
+  <circle cx="188" cy="430" r="14" fill="#F7E9E0" fill-opacity="0.18"/>
+
+  <text x="166" y="176" fill="#D8B36D" font-family="'Instrument Sans', sans-serif" font-size="22" letter-spacing="7">A MIDNIGHT SUMMONS</text>
+  <text x="160" y="292" fill="#F6EADF" font-family="'Cormorant Garamond', serif" font-size="118">The Orchard</text>
+  <text x="228" y="364" fill="#F1D5C5" font-family="'Cormorant Garamond', serif" font-size="74">Opens After Dark</text>
+
+  <text x="166" y="440" fill="#CEB8A4" font-family="'Instrument Sans', sans-serif" font-size="28">
+    Slip past the leaves. Follow the bruised glow of fig skin and split pomegranate.
+  </text>
+  <text x="166" y="480" fill="#CEB8A4" font-family="'Instrument Sans', sans-serif" font-size="28">
+    A table is waiting.
+  </text>
+</svg>

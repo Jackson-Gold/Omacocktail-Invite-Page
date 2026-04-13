@@ -1,0 +1,14 @@
+rsvps:
+  allowedFields: ["name", "alias", "avatarKey", "attending"]
+  requiredFields: ["name", "alias", "avatarKey", "attending"]
+  branch: "main"
+  commitMessage: "Add orchard RSVP entry"
+  filename: "entry-{@timestamp}"
+  format: "json"
+  moderation: false
+  path: ".github/rsvps/submissions"
+  generatedFields:
+    submittedAt:
+      type: date
+      options:
+        format: "timestamp-seconds"

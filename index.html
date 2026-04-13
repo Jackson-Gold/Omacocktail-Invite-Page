@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Orchard Opens | OMA Invite</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="A velvet-dark cocktail invitation dressed in fig skin, pomegranate glow, and midnight candlelight."
+    />
+    <meta name="theme-color" content="#09050d" />
+    <meta property="og:type" content="website" />
+    <meta id="og-title" property="og:title" content="The Orchard Opens | OMA Invite" />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="A velvet-dark cocktail invitation dressed in fig skin, pomegranate glow, and midnight candlelight."
+    />
+    <meta id="og-image" property="og:image" content="assets/forbidden-orchard-preview.svg" />
+    <meta
+      id="og-image-alt"
+      property="og:image:alt"
+      content="A dark invite card glowing with fig and pomegranate tones."
+    />
+    <meta id="og-site-name" property="og:site_name" content="OMA Invite" />
+    <meta id="twitter-title" name="twitter:title" content="The Orchard Opens | OMA Invite" />
+    <meta
+      id="twitter-description"
+      name="twitter:description"
+      content="A velvet-dark cocktail invitation dressed in fig skin, pomegranate glow, and midnight candlelight."
+    />
+    <meta id="twitter-image" name="twitter:image" content="assets/forbidden-orchard-preview.svg" />
+    <meta
+      id="twitter-image-alt"
+      name="twitter:image:alt"
+      content="A dark invite card glowing with fig and pomegranate tones."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      document.documentElement.classList.add("js-enabled");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#rsvp">Skip to RSVP</a>
+
+    <main class="page-shell">
+      <section class="hero section" aria-labelledby="hero-title-main">
+        <div class="hero__glow hero__glow--fig" aria-hidden="true"></div>
+        <div class="hero__glow hero__glow--seed" aria-hidden="true"></div>
+        <div class="hero__content panel panel--hero" data-reveal>
+          <p id="hero-eyebrow" class="eyebrow">A Midnight Summons</p>
+          <h1 id="hero-title-main" class="hero__title">
+            <span id="hero-title">The Orchard</span>
+            <span id="hero-subtitle">Opens After Dark</span>
+          </h1>
+          <p id="hero-lead" class="hero__lead">
+            Slip past the leaves. Follow the bruised glow of fig skin and split pomegranate. A table is waiting.
+          </p>
+          <p id="hero-host-line" class="hero__host-line">Hosted by OMA</p>
+          <div class="hero__actions">
+            <a id="hero-primary-link" class="button button--solid" href="#reveal">Enter the orchard</a>
+            <a id="hero-secondary-link" class="button button--ghost" href="#rsvp">Answer the summons</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="reveal" class="section section--narrow" aria-labelledby="reveal-heading">
+        <div class="section__intro" data-reveal>
+          <p id="reveal-kicker" class="eyebrow">Unseal The Clues</p>
+          <h2 id="reveal-heading" class="section__heading">Three hints before the gate swings wide.</h2>
+          <p id="reveal-intro" class="section__copy">Each touch draws the night a little closer.</p>
+        </div>
+        <div class="panel reveal-panel" data-reveal>
+          <button id="reveal-button" class="button button--solid button--reveal" type="button">
+            Unseal the first clue
+          </button>
+          <ol id="reveal-lines" class="reveal-lines" aria-live="polite" aria-label="Invitation clues"></ol>
+        </div>
+      </section>
+
+      <section id="details" class="section" aria-labelledby="details-heading">
+        <div class="section__intro" data-reveal>
+          <p id="details-kicker" class="eyebrow">The Coordinates</p>
+          <h2 id="details-heading" class="section__heading">The essentials, once the mist clears.</h2>
+          <p id="details-intro" class="section__copy">
+            Swap these placeholders for the real date, time, and location when you&apos;re ready.
+          </p>
+        </div>
+        <div id="detail-grid" class="detail-grid" data-reveal></div>
+        <p id="details-note" class="details-note" data-reveal>
+          Want the location to stay elusive? Keep the venue poetic here and send the exact address later to confirmed guests.
+        </p>
+      </section>
+
+      <section id="rsvp" class="section" aria-labelledby="rsvp-heading">
+        <div class="section__intro section--narrow" data-reveal>
+          <p id="rsvp-kicker" class="eyebrow">Whisper Your Name</p>
+          <h2 id="rsvp-heading" class="section__heading">Choose a fruit shadow and answer the orchard.</h2>
+          <p id="rsvp-body" class="section__copy">
+            Offer your real name to the keeper, then step into the guest list under a fruit pseudonym.
+          </p>
+        </div>
+        <div class="rsvp-layout">
+          <div class="panel rsvp-card" data-reveal>
+            <form id="rsvp-form" class="rsvp-form" novalidate>
+              <label class="field" for="guest-name">
+                <span id="name-label" class="field__label">Your real name</span>
+                <input
+                  id="guest-name"
+                  class="field__input"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="80"
+                  placeholder="Enter your name"
+                  required
+                />
+              </label>
+
+              <fieldset class="field fieldset">
+                <legend id="attending-legend" class="field__label">Will the orchard see you there?</legend>
+                <div id="attending-options" class="choice-grid"></div>
+              </fieldset>
+
+              <div class="field">
+                <div class="field__row">
+                  <div>
+                    <p id="alias-heading" class="field__label">Choose a fruit pseudonym</p>
+                    <p id="alias-intro" class="field__hint">
+                      We generate three names at a time. Only your chosen alias appears publicly on the site.
+                    </p>
+                  </div>
+                  <button id="regenerate-aliases" class="button button--ghost button--small" type="button">
+                    Summon fresh aliases
+                  </button>
+                </div>
+                <input id="alias-input" name="alias" type="hidden" />
+                <input id="avatar-key-input" name="avatarKey" type="hidden" />
+                <div id="alias-options" class="alias-grid" aria-labelledby="alias-heading"></div>
+              </div>
+
+              <p id="rsvp-helper" class="field__hint field__hint--strong">
+                Your real name is stored in the repo-side RSVP log for the host. Your alias, avatar, and attendance
+                status are what guests see on the page.
+              </p>
+
+              <div class="form-actions">
+                <button id="rsvp-submit" class="button button--solid button--rsvp" type="submit">
+                  Send RSVP into the orchard
+                </button>
+                <p id="submission-status" class="submission-status" aria-live="polite"></p>
+              </div>
+            </form>
+            <p id="rsvp-deadline" class="rsvp-deadline">Placeholder RSVP deadline: September 18</p>
+            <p id="rsvp-backend-note" class="backend-note">
+              Once live, the guest wall refreshes after the RSVP file lands in the repo and GitHub Pages redeploys.
+            </p>
+          </div>
+
+          <aside class="panel attendee-wall" data-reveal aria-labelledby="attendee-heading">
+            <p id="attendee-kicker" class="eyebrow">Seen In The Orchard</p>
+            <h2 id="attendee-heading" class="section__heading attendee-wall__heading">
+              Fruit names already whispering back.
+            </h2>
+            <p id="attendee-body" class="section__copy attendee-wall__copy">
+              This wall only shows pseudonyms, avatars, and attendance status.
+            </p>
+            <ul id="attendee-list" class="attendee-list" aria-live="polite"></ul>
+            <p id="attendee-empty" class="attendee-empty">No aliases have bloomed yet. Yours could be the first.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-reveal>
+      <p id="footer-note">
+        Built for GitHub Pages. Live RSVPs are written into repo files via Staticman once the endpoint is configured.
+      </p>
+    </footer>
+
+    <script src="site-config.js"></script>
+    <script>
+      const { siteConfig } = window;
+
+      const byId = (id) => document.getElementById(id);
+      const setText = (id, value) => {
+        const node = byId(id);
+        if (node && typeof value === "string") {
+          node.textContent = value;
+        }
+      };
+
+      const setMeta = (id, value) => {
+        const node = byId(id);
+        if (node && typeof value === "string") {
+          node.setAttribute("content", value);
+        }
+      };
+
+      const shuffle = (list) => {
+        const copy = [...list];
+        for (let index = copy.length - 1; index > 0; index -= 1) {
+          const swapIndex = Math.floor(Math.random() * (index + 1));
+          [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+        }
+        return copy;
+      };
+
+      const statusCopyByValue = new Map(
+        siteConfig.rsvp.attendingOptions.map((option) => [option.value, option.publicLabel])
+      );
+
+      const fruitByKey = new Map(siteConfig.aliasGenerator.fruits.map((fruit) => [fruit.key, fruit]));
+
+      const createFruitAvatar = (fruitKey, labelText = "") => {
+        const fruit = fruitByKey.get(fruitKey) ?? siteConfig.aliasGenerator.fruits[0];
+        const avatar = document.createElement("span");
+        avatar.className = "fruit-avatar fruit-avatar--" + fruit.key;
+        avatar.setAttribute("aria-hidden", "true");
+
+        const glyph = document.createElement("span");
+        glyph.className = "fruit-avatar__glyph";
+        glyph.textContent = labelText.slice(0, 1).toUpperCase();
+
+        avatar.append(glyph);
+        return avatar;
+      };
+
+      const createStatusBadge = (value) => {
+        const badge = document.createElement("span");
+        badge.className = "status-badge status-badge--" + value;
+        badge.textContent = statusCopyByValue.get(value) ?? value;
+        return badge;
+      };
+
+      document.title = siteConfig.page.title;
+
+      const absoluteImage = new URL(siteConfig.page.socialImage, window.location.href).href;
+
+      setText("hero-eyebrow", siteConfig.hero.eyebrow);
+      setText("hero-title", siteConfig.hero.title);
+      setText("hero-subtitle", siteConfig.hero.subtitle);
+      setText("hero-lead", siteConfig.hero.lead);
+      setText("hero-host-line", siteConfig.hero.hostLine);
+      setText("reveal-kicker", siteConfig.reveal.kicker);
+      setText("reveal-heading", siteConfig.reveal.heading);
+      setText("reveal-intro", siteConfig.reveal.intro);
+      setText("details-kicker", siteConfig.details.kicker);
+      setText("details-heading", siteConfig.details.heading);
+      setText("details-intro", siteConfig.details.intro);
+      setText("details-note", siteConfig.details.note);
+      setText("rsvp-kicker", siteConfig.rsvp.kicker);
+      setText("rsvp-heading", siteConfig.rsvp.heading);
+      setText("rsvp-body", siteConfig.rsvp.body);
+      setText("name-label", siteConfig.rsvp.nameLabel);
+      setText("attending-legend", siteConfig.rsvp.attendingLegend);
+      setText("alias-heading", siteConfig.rsvp.aliasHeading);
+      setText("alias-intro", siteConfig.rsvp.aliasIntro);
+      setText("regenerate-aliases", siteConfig.rsvp.regenerateLabel);
+      setText("rsvp-helper", siteConfig.rsvp.helper);
+      setText("rsvp-submit", siteConfig.rsvp.submitLabel);
+      setText("rsvp-deadline", siteConfig.rsvp.deadline);
+      setText("rsvp-backend-note", siteConfig.rsvp.backendNote);
+      setText("attendee-kicker", siteConfig.rsvp.attendeeKicker);
+      setText("attendee-heading", siteConfig.rsvp.attendeeHeading);
+      setText("attendee-body", siteConfig.rsvp.attendeeBody);
+      setText("attendee-empty", siteConfig.rsvp.attendeeEmpty);
+      setText("footer-note", siteConfig.footer.note);
+
+      const guestNameInput = byId("guest-name");
+      guestNameInput.placeholder = siteConfig.rsvp.namePlaceholder;
+
+      const primaryLink = byId("hero-primary-link");
+      const secondaryLink = byId("hero-secondary-link");
+
+      primaryLink.textContent = siteConfig.hero.primaryCta;
+      primaryLink.href = siteConfig.hero.primaryHref;
+      secondaryLink.textContent = siteConfig.hero.secondaryCta;
+      secondaryLink.href = siteConfig.hero.secondaryHref;
+
+      setMeta("meta-description", siteConfig.page.description);
+      setMeta("og-title", siteConfig.page.socialTitle);
+      setMeta("og-description", siteConfig.page.socialDescription);
+      setMeta("og-image", absoluteImage);
+      setMeta("og-image-alt", siteConfig.page.socialImageAlt);
+      setMeta("og-site-name", siteConfig.page.siteName);
+      setMeta("twitter-title", siteConfig.page.socialTitle);
+      setMeta("twitter-description", siteConfig.page.socialDescription);
+      setMeta("twitter-image", absoluteImage);
+      setMeta("twitter-image-alt", siteConfig.page.socialImageAlt);
+
+      const detailGrid = byId("detail-grid");
+      siteConfig.details.facts.forEach((fact, index) => {
+        const card = document.createElement("article");
+        card.className = "detail-card";
+        card.style.setProperty("--card-index", String(index));
+
+        const label = document.createElement("p");
+        label.className = "detail-card__label";
+        label.textContent = fact.label;
+
+        const value = document.createElement("h3");
+        value.className = "detail-card__value";
+        value.textContent = fact.value;
+
+        const note = document.createElement("p");
+        note.className = "detail-card__note";
+        note.textContent = fact.note;
+
+        card.append(label, value, note);
+        detailGrid.append(card);
+      });
+
+      const revealList = byId("reveal-lines");
+      siteConfig.reveal.lines.forEach((line, index) => {
+        const item = document.createElement("li");
+        item.className = "reveal-lines__item";
+        item.setAttribute("data-line-index", String(index));
+        item.textContent = line;
+        revealList.append(item);
+      });
+
+      let revealedCount = 0;
+      const revealButton = byId("reveal-button");
+      const revealItems = Array.from(revealList.children);
+
+      const updateRevealButtonLabel = () => {
+        if (revealedCount >= revealItems.length) {
+          revealButton.textContent = siteConfig.reveal.completedLabel;
+          revealButton.disabled = true;
+          revealButton.setAttribute("aria-disabled", "true");
+          return;
+        }
+
+        revealButton.textContent =
+          siteConfig.reveal.buttonLabels[revealedCount] ??
+          siteConfig.reveal.buttonLabels[siteConfig.reveal.buttonLabels.length - 1];
+      };
+
+      revealButton.addEventListener("click", () => {
+        const nextItem = revealItems[revealedCount];
+        if (!nextItem) {
+          return;
+        }
+
+        nextItem.classList.add("is-visible");
+        revealedCount += 1;
+        updateRevealButtonLabel();
+      });
+
+      updateRevealButtonLabel();
+
+      const attendingOptions = byId("attending-options");
+      const aliasOptions = byId("alias-options");
+      const aliasInput = byId("alias-input");
+      const avatarKeyInput = byId("avatar-key-input");
+      const aliasRegenerateButton = byId("regenerate-aliases");
+      const submissionStatus = byId("submission-status");
+      const attendeeList = byId("attendee-list");
+      const attendeeEmpty = byId("attendee-empty");
+      const rsvpForm = byId("rsvp-form");
+      const submitButton = byId("rsvp-submit");
+
+      const renderAttendingOptions = () => {
+        siteConfig.rsvp.attendingOptions.forEach((option, index) => {
+          const label = document.createElement("label");
+          label.className = "choice-card";
+
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "attending";
+          input.value = option.value;
+          input.className = "choice-card__input";
+          input.required = true;
+          input.checked = option.value === siteConfig.rsvp.defaultAttending || (!siteConfig.rsvp.defaultAttending && index === 0);
+
+          const body = document.createElement("span");
+          body.className = "choice-card__body";
+
+          const title = document.createElement("span");
+          title.className = "choice-card__title";
+          title.textContent = option.label;
+
+          const description = document.createElement("span");
+          description.className = "choice-card__description";
+          description.textContent = option.description;
+
+          body.append(title, description);
+          label.append(input, body);
+          attendingOptions.append(label);
+        });
+      };
+
+      const pickAliasOptions = () => {
+        const fruits = shuffle(siteConfig.aliasGenerator.fruits).slice(0, 3);
+        const adjectives = shuffle(siteConfig.aliasGenerator.adjectives);
+
+        return fruits.map((fruit, index) => ({
+          alias: adjectives[index % adjectives.length] + " " + fruit.label,
+          fruitKey: fruit.key,
+          fruitLabel: fruit.label
+        }));
+      };
+
+      let currentAliasOptions = [];
+      let selectedAlias = null;
+
+      const selectAlias = (option) => {
+        selectedAlias = option;
+        aliasInput.value = option.alias;
+        avatarKeyInput.value = option.fruitKey;
+
+        Array.from(aliasOptions.children).forEach((node) => {
+          const matches = node.getAttribute("data-alias") === option.alias;
+          node.classList.toggle("is-selected", matches);
+          node.setAttribute("aria-pressed", String(matches));
+        });
+      };
+
+      const renderAliasOptions = () => {
+        currentAliasOptions = pickAliasOptions();
+        aliasOptions.textContent = "";
+
+        currentAliasOptions.forEach((option, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "alias-option";
+          button.setAttribute("data-alias", option.alias);
+          button.setAttribute("aria-pressed", "false");
+          button.addEventListener("click", () => selectAlias(option));
+
+          const avatar = createFruitAvatar(option.fruitKey, option.fruitLabel);
+
+          const copy = document.createElement("span");
+          copy.className = "alias-option__copy";
+
+          const title = document.createElement("span");
+          title.className = "alias-option__title";
+          title.textContent = option.alias;
+
+          const meta = document.createElement("span");
+          meta.className = "alias-option__meta";
+          meta.textContent = index === 0 ? "First omen" : index === 1 ? "Second omen" : "Third omen";
+
+          copy.append(title, meta);
+          button.append(avatar, copy);
+          aliasOptions.append(button);
+        });
+
+        selectAlias(currentAliasOptions[0]);
+      };
+
+      aliasRegenerateButton.addEventListener("click", renderAliasOptions);
+
+      const clearAttendees = () => {
+        attendeeList.textContent = "";
+      };
+
+      const renderAttendees = (entries) => {
+        clearAttendees();
+
+        if (!entries.length) {
+          attendeeEmpty.hidden = false;
+          return;
+        }
+
+        attendeeEmpty.hidden = true;
+
+        entries.forEach((entry) => {
+          const item = document.createElement("li");
+          item.className = "attendee-item";
+
+          const avatar = createFruitAvatar(entry.avatarKey, entry.alias);
+
+          const copy = document.createElement("div");
+          copy.className = "attendee-item__copy";
+
+          const alias = document.createElement("p");
+          alias.className = "attendee-item__alias";
+          alias.textContent = entry.alias;
+
+          const meta = document.createElement("div");
+          meta.className = "attendee-item__meta";
+          meta.append(createStatusBadge(entry.attending));
+
+          copy.append(alias, meta);
+          item.append(avatar, copy);
+          attendeeList.append(item);
+        });
+      };
+
+      const loadPublicAttendees = async () => {
+        try {
+          const response = await fetch(siteConfig.rsvp.backend.publicAttendeesPath, {
+            cache: "no-store"
+          });
+
+          if (!response.ok) {
+            throw new Error("attendee wall unavailable");
+          }
+
+          const payload = await response.json();
+          const entries = Array.isArray(payload) ? payload : payload.attendees || [];
+          renderAttendees(entries.filter((entry) => entry.attending === "attending"));
+        } catch (error) {
+          renderAttendees([]);
+        }
+      };
+
+      renderAttendingOptions();
+      renderAliasOptions();
+      loadPublicAttendees();
+
+      const isConfiguredEntryUrl = (value) =>
+        /^https?:\/\//.test(value) && !value.includes("YOUR-") && !value.includes("example.com");
+
+      const setSubmissionMessage = (message, tone = "") => {
+        submissionStatus.textContent = message;
+        submissionStatus.dataset.tone = tone;
+      };
+
+      if (!isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl)) {
+        submitButton.disabled = true;
+        submitButton.setAttribute("aria-disabled", "true");
+        setSubmissionMessage(siteConfig.rsvp.backendMissingMessage, "warning");
+      }
+
+      rsvpForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const selectedAttending = rsvpForm.querySelector('input[name="attending"]:checked');
+        const nameValue = guestNameInput.value.trim();
+
+        if (!nameValue || !selectedAttending || !selectedAlias) {
+          setSubmissionMessage(siteConfig.rsvp.validationMessage, "warning");
+          return;
+        }
+
+        if (!isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl)) {
+          setSubmissionMessage(siteConfig.rsvp.backendMissingMessage, "warning");
+          return;
+        }
+
+        const payload = new FormData();
+        payload.set("name", nameValue);
+        payload.set("alias", selectedAlias.alias);
+        payload.set("avatarKey", selectedAlias.fruitKey);
+        payload.set("attending", selectedAttending.value);
+
+        submitButton.disabled = true;
+        setSubmissionMessage(siteConfig.rsvp.submittingMessage, "");
+
+        try {
+          const response = await fetch(siteConfig.rsvp.backend.entryUrl, {
+            method: "POST",
+            body: payload,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error("submission failed");
+          }
+
+          setSubmissionMessage(siteConfig.rsvp.successMessage, "success");
+          rsvpForm.reset();
+          renderAliasOptions();
+          Array.from(attendingOptions.querySelectorAll('input[name="attending"]')).forEach((input) => {
+            input.checked = input.value === siteConfig.rsvp.defaultAttending;
+          });
+        } catch (error) {
+          setSubmissionMessage(siteConfig.rsvp.errorMessage, "error");
+        } finally {
+          submitButton.disabled = !isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl);
+        }
+      });
+
+      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const revealables = document.querySelectorAll("[data-reveal]");
+
+      if (motionQuery.matches) {
+        revealables.forEach((node) => node.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18 }
+        );
+
+        revealables.forEach((node) => observer.observe(node));
+      }
+    </script>
+  </body>
+</html>
