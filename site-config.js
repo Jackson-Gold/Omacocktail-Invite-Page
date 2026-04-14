@@ -14,43 +14,15 @@ const siteConfig = {
     subtitle: "Opens After Dark",
     lead: "Slip past the leaves. Follow the bruised glow of fig skin and split pomegranate. A table is waiting.",
     hostLine: "Hosted by OMA",
-    guide: [
-      "Read the invitation",
-      "Choose a fruit alias",
-      "Confirm your attendance"
-    ],
-    primaryCta: "How this works",
-    primaryHref: "#how-it-works",
+    primaryCta: "Reveal the night",
+    primaryHref: "#details",
     secondaryCta: "RSVP now",
     secondaryHref: "#rsvp"
-  },
-  journey: {
-    kicker: "How To Enter",
-    heading: "A clear path through the orchard.",
-    intro: "This invite has a mood, but it should still be easy to use.",
-    steps: [
-      {
-        title: "Read",
-        body: "Start with the clues and event details so you know what kind of night you are stepping into."
-      },
-      {
-        title: "Name",
-        body: "Enter your real name once so the host can identify you in the repo-side RSVP log."
-      },
-      {
-        title: "Alias",
-        body: "Generate a fruit pseudonym for the invitation mood and save it alongside your RSVP."
-      },
-      {
-        title: "Confirm",
-        body: "Choose yes, maybe, or no. The important part is that your RSVP is saved into the repo for the host."
-      }
-    ]
   },
   reveal: {
     kicker: "Unseal The Clues",
     heading: "Three hints before the gate swings wide.",
-    intro: "A few direct hints, without making anyone work for them.",
+    intro: "Three clues. No explanations.",
     lines: [
       "When the moon turns plum above the city, the first glass will be poured.",
       "Look for candlelight, lacquered fruit, and a room perfumed with fig leaf and smoke.",
@@ -64,50 +36,41 @@ const siteConfig = {
     facts: [
       {
         label: "Occasion",
-        value: "Forbidden Orchard Cocktail Night",
+        value: "Forbidden Fruit Omacocktail Evening",
         note: "An intimate invite-only gathering."
       },
       {
         label: "Date",
-        value: "Saturday, September 26",
+        value: "Tuesday, April 14",
         note: "Placeholder date for the first draft."
       },
       {
         label: "Time",
-        value: "8:30 PM until late",
+        value: "7:00 PM until 9:00 PM",
         note: "Golden hour fades, then the candles take over."
       },
       {
         label: "Location",
-        value: "A hidden room in Brooklyn",
-        note: "Replace with the venue name and address."
+        value: "239 South 41st",
+        note: "Your orchard oasis"
       }
     ],
-    note: "Want the location to stay elusive? Keep the venue poetic here and send the exact address later to confirmed guests."
+    note: "Arrive on time. The door may not wait."
   },
   rsvp: {
     kicker: "Whisper Your Name",
     heading: "Choose a fruit shadow and answer the orchard.",
-    body: "Offer your real name to the keeper, then save your RSVP under a fruit pseudonym.",
+    body: "Give your true name. Choose the fruit shadow that feels like yours.",
     nameLabel: "Your real name",
     namePlaceholder: "Enter your name",
-    attendingLegend: "Will the orchard see you there?",
+    attendingLegend: "Will you enter the orchard?",
     aliasHeading: "Choose a fruit pseudonym",
-    aliasIntro: "We generate three names at a time so the RSVP still feels mysterious and fun.",
-    regenerateLabel: "Summon fresh aliases",
-    helper: "Your real name and chosen alias are stored in the repo-side RSVP log for the host.",
-    submitLabel: "Send RSVP into the orchard",
-    deadline: "Placeholder RSVP deadline: September 18",
+    aliasIntro: "Three names appear at once. Choose one and let the rest vanish.",
+    regenerateLabel: "New names",
+    helper: "Your name and chosen alias are stored in the repo RSVP log for the host.",
+    submitLabel: "Send RSVP",
+    deadline: "RSVP before the candles are lit.",
     backendNote: "Once live, each RSVP is written into the repo as its own JSON file, and the host log is refreshed automatically.",
-    notesKicker: "What Happens Next",
-    notesHeading: "Your RSVP goes to the host log, not a public wall.",
-    notesBody: "This page is now focused on a clear RSVP flow. The important part is saving each response to the repo.",
-    notes: [
-      "Your real name is saved for the host in the repo-side RSVP files.",
-      "Your fruit alias is still chosen on the page for mood and identity.",
-      "The site no longer depends on live attendee counts or public guest lists.",
-      "If the backend is not configured yet, the submit button stays disabled on purpose."
-    ],
     backendMissingMessage: "Live saving is not enabled yet. Add your Cloudflare Worker URL in site-config.js to make this form write RSVP files into the repo.",
     validationMessage: "Add your name, choose your attendance, and select a fruit alias first.",
     submittingMessage: "Sending your RSVP into the orchard...",
@@ -119,11 +82,6 @@ const siteConfig = {
         value: "attending",
         label: "Yes, I will be there",
         description: "Count me beneath the candlelight."
-      },
-      {
-        value: "maybe",
-        label: "Maybe",
-        description: "The orchard may yet tempt me."
       },
       {
         value: "not-attending",

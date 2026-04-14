@@ -84,7 +84,7 @@ export default {
     const avatarKey = clean(payload.avatarKey, 40);
     const attending = clean(payload.attending, 24);
 
-    if (!name || !alias || !avatarKey || !["attending", "maybe", "not-attending"].includes(attending)) {
+    if (!name || !alias || !avatarKey || !["attending", "not-attending"].includes(attending)) {
       return json({ error: "Missing or invalid RSVP fields" }, 400, origin || "*");
     }
 
