@@ -58,27 +58,12 @@ const siteConfig = {
     note: "Arrive on time. The door may not wait."
   },
   rsvp: {
-    kicker: "Whisper Your Name",
-    heading: "Choose a fruit shadow and answer the orchard.",
-    body: "Choose the fruit shadow that feels like yours.",
+    kicker: "Borrowed Fruit",
+    heading: "Take one name from the orchard.",
+    body: "Nine fruit shadows wait below. Choose the one you want to carry into the night.",
     aliasHeading: "Choose a fruit pseudonym",
     aliasIntro: "Nine names wait below. Choose one.",
-    helper: "Choose a fruit name, then text the organizer.",
-    deadline: "RSVP before the candles are lit.",
-    organizerNote: "Text the organizer your fruit alias to RSVP.",
-    organizerBannerLabel: "Text the organizer your fruit alias to RSVP",
-    organizerBannerValue: "Midnight Fig",
-    aliasOptions: [
-      { alias: "Midnight Fig", fruitKey: "fig" },
-      { alias: "Velvet Plum", fruitKey: "plum" },
-      { alias: "Secret Cherry", fruitKey: "cherry" },
-      { alias: "Shadow Pomegranate", fruitKey: "pomegranate" },
-      { alias: "Bruised Blackberry", fruitKey: "blackberry" },
-      { alias: "Ember Blood Orange", fruitKey: "blood-orange" },
-      { alias: "Silken Mulberry", fruitKey: "mulberry" },
-      { alias: "Gilded Quince", fruitKey: "quince" },
-      { alias: "Thorned Fig", fruitKey: "fig" }
-    ]
+    organizerBannerLabel: "Text the organizer your fruit alias to RSVP"
   },
   footer: {
     note: "Built for GitHub Pages."
