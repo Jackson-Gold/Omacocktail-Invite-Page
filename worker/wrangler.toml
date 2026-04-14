@@ -1,0 +1,10 @@
+name = "forbidden-orchard-rsvp"
+main = "src/index.js"
+compatibility_date = "2026-04-13"
+
+[vars]
+GITHUB_OWNER = "Jackson-Gold"
+GITHUB_REPO = "Omacocktail-Invite-Page"
+GITHUB_BRANCH = "main"
+RSVP_PATH_PREFIX = ".github/rsvps/submissions"
+ALLOWED_ORIGIN = "https://jackson-gold.github.io"

@@ -9,14 +9,10 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
 
     steps:
       - name: Check out repository
@@ -32,25 +28,13 @@ jobs:
 
       - name: Commit updated attendee files
         run: |
-          if git diff --quiet -- data/public-attendees.json .github/rsvps/guest-log.json; then
+          if git diff --quiet -- .github/rsvps/guest-log.json; then
             echo "No attendee changes to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/public-attendees.json .github/rsvps/guest-log.json
+          git add .github/rsvps/guest-log.json
           git commit -m "Sync RSVP attendee data"
           git push
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

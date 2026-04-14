@@ -39,20 +39,18 @@ const siteConfig = {
       },
       {
         title: "Alias",
-        body: "Generate a fruit pseudonym and choose the one you want other guests to see on the attendee wall."
+        body: "Generate a fruit pseudonym for the invitation mood and save it alongside your RSVP."
       },
       {
         title: "Confirm",
-        body: "Choose yes, maybe, or no. Only confirmed guests are shown publicly on the site."
+        body: "Choose yes, maybe, or no. The important part is that your RSVP is saved into the repo for the host."
       }
     ]
   },
   reveal: {
     kicker: "Unseal The Clues",
     heading: "Three hints before the gate swings wide.",
-    intro: "Each touch draws the night a little closer.",
-    buttonLabels: ["Unseal the first clue", "Draw out the second clue", "Reveal the final clue"],
-    completedLabel: "The invitation is open",
+    intro: "A few direct hints, without making anyone work for them.",
     lines: [
       "When the moon turns plum above the city, the first glass will be poured.",
       "Look for candlelight, lacquered fruit, and a room perfumed with fig leaf and smoke.",
@@ -90,51 +88,51 @@ const siteConfig = {
   rsvp: {
     kicker: "Whisper Your Name",
     heading: "Choose a fruit shadow and answer the orchard.",
-    body: "Offer your real name to the keeper, then step into the guest list under a fruit pseudonym.",
+    body: "Offer your real name to the keeper, then save your RSVP under a fruit pseudonym.",
     nameLabel: "Your real name",
     namePlaceholder: "Enter your name",
     attendingLegend: "Will the orchard see you there?",
     aliasHeading: "Choose a fruit pseudonym",
-    aliasIntro: "We generate three names at a time. Only your chosen alias appears publicly on the site.",
+    aliasIntro: "We generate three names at a time so the RSVP still feels mysterious and fun.",
     regenerateLabel: "Summon fresh aliases",
-    helper: "Your real name is stored in the repo-side RSVP log for the host. Only confirmed aliases appear publicly on the page.",
+    helper: "Your real name and chosen alias are stored in the repo-side RSVP log for the host.",
     submitLabel: "Send RSVP into the orchard",
     deadline: "Placeholder RSVP deadline: September 18",
-    backendNote: "Once live, the guest wall refreshes after the RSVP file lands in the repo and GitHub Pages redeploys.",
-    attendeeKicker: "Seen In The Orchard",
-    attendeeHeading: "Fruit names already whispering back.",
-    attendeeBody: "This wall only shows confirmed fruit pseudonyms who said yes to the invitation.",
-    attendeeEmpty: "No confirmed aliases have bloomed yet. Yours could be the first.",
-    loadingMessage: "Listening for the orchard roll call...",
-    backendMissingMessage: "Live saving is not enabled yet. Add your Staticman entry URL in site-config.js to make this form write RSVP files into the repo.",
+    backendNote: "Once live, each RSVP is written into the repo as its own JSON file, and the host log is refreshed automatically.",
+    notesKicker: "What Happens Next",
+    notesHeading: "Your RSVP goes to the host log, not a public wall.",
+    notesBody: "This page is now focused on a clear RSVP flow. The important part is saving each response to the repo.",
+    notes: [
+      "Your real name is saved for the host in the repo-side RSVP files.",
+      "Your fruit alias is still chosen on the page for mood and identity.",
+      "The site no longer depends on live attendee counts or public guest lists.",
+      "If the backend is not configured yet, the submit button stays disabled on purpose."
+    ],
+    backendMissingMessage: "Live saving is not enabled yet. Add your Cloudflare Worker URL in site-config.js to make this form write RSVP files into the repo.",
     validationMessage: "Add your name, choose your attendance, and select a fruit alias first.",
     submittingMessage: "Sending your RSVP into the orchard...",
-    successMessage: "Your RSVP was sent. The public alias wall updates after the repo sync finishes.",
-    errorMessage: "The orchard could not write your RSVP. Check the Staticman URL and repo setup, then try again.",
+    successMessage: "Your RSVP was saved. The host log file in the repo will update after the sync workflow runs.",
+    errorMessage: "The orchard could not write your RSVP. Check the Worker URL and repo setup, then try again.",
     defaultAttending: "attending",
     attendingOptions: [
       {
         value: "attending",
         label: "Yes, I will be there",
-        description: "Count me beneath the candlelight.",
-        publicLabel: "Confirmed"
+        description: "Count me beneath the candlelight."
       },
       {
         value: "maybe",
         label: "Maybe",
-        description: "The orchard may yet tempt me.",
-        publicLabel: "Maybe"
+        description: "The orchard may yet tempt me."
       },
       {
         value: "not-attending",
         label: "I cannot make it",
-        description: "Not this harvest.",
-        publicLabel: "Unable"
+        description: "Not this harvest."
       }
     ],
     backend: {
-      entryUrl: "https://YOUR-STATICMAN-INSTANCE/v3/entry/github/YOUR-OWNER/YOUR-REPO/main/rsvps",
-      publicAttendeesPath: "data/public-attendees.json",
+      entryUrl: "https://YOUR-WORKER.your-subdomain.workers.dev/submit",
       adminLogPath: ".github/rsvps/guest-log.json"
     }
   },
@@ -165,7 +163,7 @@ const siteConfig = {
     ]
   },
   footer: {
-    note: "Built for GitHub Pages. Live RSVPs are written into repo files via Staticman once the endpoint is configured."
+    note: "Built for GitHub Pages. Live RSVPs are written into repo files through a small Worker once the endpoint is configured."
   }
 };
 

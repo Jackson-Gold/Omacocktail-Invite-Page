@@ -37,9 +37,6 @@
       content="A dark invite card glowing with fig and pomegranate tones."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      document.documentElement.classList.add("js-enabled");
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,54 +75,111 @@
       </section>
 
       <section id="how-it-works" class="section section--narrow" aria-labelledby="journey-heading">
-        <div class="section__intro" data-reveal>
+        <div class="section__intro">
           <p id="journey-kicker" class="eyebrow">How To Enter</p>
           <h2 id="journey-heading" class="section__heading">A clear path through the orchard.</h2>
           <p id="journey-intro" class="section__copy">
             This invite has a mood, but it should still be easy to use.
           </p>
         </div>
-        <div id="journey-steps" class="journey-grid" data-reveal></div>
+        <div id="journey-steps" class="journey-grid">
+          <article class="journey-card">
+            <p class="journey-card__number">01</p>
+            <h3 class="journey-card__title">Read</h3>
+            <p class="journey-card__body">
+              Start with the clues and event details so you know what kind of night you are stepping into.
+            </p>
+          </article>
+          <article class="journey-card">
+            <p class="journey-card__number">02</p>
+            <h3 class="journey-card__title">Name</h3>
+            <p class="journey-card__body">
+              Enter your real name once so the host can identify you in the repo-side RSVP log.
+            </p>
+          </article>
+          <article class="journey-card">
+            <p class="journey-card__number">03</p>
+            <h3 class="journey-card__title">Alias</h3>
+            <p class="journey-card__body">
+              Generate a fruit pseudonym for the invitation mood and save it alongside your RSVP.
+            </p>
+          </article>
+          <article class="journey-card">
+            <p class="journey-card__number">04</p>
+            <h3 class="journey-card__title">Confirm</h3>
+            <p class="journey-card__body">
+              Choose yes, maybe, or no. The important part is that your RSVP is saved into the repo for the host.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section id="reveal" class="section section--narrow" aria-labelledby="reveal-heading">
-        <div class="section__intro" data-reveal>
+        <div class="section__intro">
           <p id="reveal-kicker" class="eyebrow">Unseal The Clues</p>
           <h2 id="reveal-heading" class="section__heading">Three hints before the gate swings wide.</h2>
-          <p id="reveal-intro" class="section__copy">Each touch draws the night a little closer.</p>
+          <p id="reveal-intro" class="section__copy">A few direct hints, without making anyone work for them.</p>
         </div>
-        <div class="panel reveal-panel" data-reveal>
-          <button id="reveal-button" class="button button--solid button--reveal" type="button">
-            Unseal the first clue
-          </button>
-          <ol id="reveal-lines" class="reveal-lines" aria-live="polite" aria-label="Invitation clues"></ol>
+        <div class="panel reveal-panel">
+          <ol id="reveal-lines" class="reveal-lines" aria-live="polite" aria-label="Invitation clues">
+            <li class="reveal-lines__item">
+              When the moon turns plum above the city, the first glass will be poured.
+            </li>
+            <li class="reveal-lines__item">
+              Look for candlelight, lacquered fruit, and a room perfumed with fig leaf and smoke.
+            </li>
+            <li class="reveal-lines__item">
+              Come dressed for a beautiful secret and stay until the last seed gleams.
+            </li>
+          </ol>
         </div>
       </section>
 
       <section id="details" class="section" aria-labelledby="details-heading">
-        <div class="section__intro" data-reveal>
+        <div class="section__intro">
           <p id="details-kicker" class="eyebrow">The Coordinates</p>
           <h2 id="details-heading" class="section__heading">The essentials, once the mist clears.</h2>
           <p id="details-intro" class="section__copy">
             Swap these placeholders for the real date, time, and location when you&apos;re ready.
           </p>
         </div>
-        <div id="detail-grid" class="detail-grid" data-reveal></div>
-        <p id="details-note" class="details-note" data-reveal>
+        <div id="detail-grid" class="detail-grid">
+          <article class="detail-card" style="--card-index: 0">
+            <p class="detail-card__label">Occasion</p>
+            <h3 class="detail-card__value">Forbidden Orchard Cocktail Night</h3>
+            <p class="detail-card__note">An intimate invite-only gathering.</p>
+          </article>
+          <article class="detail-card" style="--card-index: 1">
+            <p class="detail-card__label">Date</p>
+            <h3 class="detail-card__value">Saturday, September 26</h3>
+            <p class="detail-card__note">Placeholder date for the first draft.</p>
+          </article>
+          <article class="detail-card" style="--card-index: 2">
+            <p class="detail-card__label">Time</p>
+            <h3 class="detail-card__value">8:30 PM until late</h3>
+            <p class="detail-card__note">Golden hour fades, then the candles take over.</p>
+          </article>
+          <article class="detail-card" style="--card-index: 3">
+            <p class="detail-card__label">Location</p>
+            <h3 class="detail-card__value">A hidden room in Brooklyn</h3>
+            <p class="detail-card__note">Replace with the venue name and address.</p>
+          </article>
+        </div>
+        <p id="details-note" class="details-note">
           Want the location to stay elusive? Keep the venue poetic here and send the exact address later to confirmed guests.
         </p>
       </section>
 
       <section id="rsvp" class="section" aria-labelledby="rsvp-heading">
-        <div class="section__intro section--narrow" data-reveal>
+        <div class="section__intro section--narrow">
           <p id="rsvp-kicker" class="eyebrow">Whisper Your Name</p>
           <h2 id="rsvp-heading" class="section__heading">Choose a fruit shadow and answer the orchard.</h2>
           <p id="rsvp-body" class="section__copy">
-            Offer your real name to the keeper, then step into the guest list under a fruit pseudonym.
+            Offer your real name to the keeper, then save your RSVP under a fruit pseudonym.
           </p>
         </div>
         <div class="rsvp-layout">
-          <div class="panel rsvp-card" data-reveal>
+          <div class="panel rsvp-card">
             <form id="rsvp-form" class="rsvp-form" novalidate>
               <label class="field" for="guest-name">
                 <span id="name-label" class="field__label">Your real name</span>
@@ -143,7 +197,42 @@
 
               <fieldset class="field fieldset">
                 <legend id="attending-legend" class="field__label">Will the orchard see you there?</legend>
-                <div id="attending-options" class="choice-grid"></div>
+                <div id="attending-options" class="choice-grid">
+                  <label class="choice-card">
+                    <input
+                      class="choice-card__input"
+                      type="radio"
+                      name="attending"
+                      value="attending"
+                      checked
+                      required
+                    />
+                    <span class="choice-card__body">
+                      <span class="choice-card__title">Yes, I will be there</span>
+                      <span class="choice-card__description">Count me beneath the candlelight.</span>
+                    </span>
+                  </label>
+                  <label class="choice-card">
+                    <input class="choice-card__input" type="radio" name="attending" value="maybe" required />
+                    <span class="choice-card__body">
+                      <span class="choice-card__title">Maybe</span>
+                      <span class="choice-card__description">The orchard may yet tempt me.</span>
+                    </span>
+                  </label>
+                  <label class="choice-card">
+                    <input
+                      class="choice-card__input"
+                      type="radio"
+                      name="attending"
+                      value="not-attending"
+                      required
+                    />
+                    <span class="choice-card__body">
+                      <span class="choice-card__title">I cannot make it</span>
+                      <span class="choice-card__description">Not this harvest.</span>
+                    </span>
+                  </label>
+                </div>
               </fieldset>
 
               <div class="field">
@@ -151,7 +240,7 @@
                   <div>
                     <p id="alias-heading" class="field__label">Choose a fruit pseudonym</p>
                     <p id="alias-intro" class="field__hint">
-                      We generate three names at a time. Only your chosen alias appears publicly on the site.
+                      We generate three names at a time so the RSVP still feels mysterious and fun.
                     </p>
                   </div>
                   <button id="regenerate-aliases" class="button button--ghost button--small" type="button">
@@ -160,47 +249,60 @@
                 </div>
                 <input id="alias-input" name="alias" type="hidden" />
                 <input id="avatar-key-input" name="avatarKey" type="hidden" />
-                <div id="alias-options" class="alias-grid" aria-labelledby="alias-heading"></div>
+                <div id="alias-options" class="alias-grid" aria-labelledby="alias-heading">
+                  <p class="alias-placeholder">Fruit aliases appear here as soon as the page finishes loading.</p>
+                </div>
               </div>
 
               <p id="rsvp-helper" class="field__hint field__hint--strong">
-                Your real name is stored in the repo-side RSVP log for the host. Only confirmed aliases appear publicly
-                on the page.
+                Your real name and chosen alias are stored in the repo-side RSVP log for the host.
               </p>
 
               <div class="form-actions">
                 <button id="rsvp-submit" class="button button--solid button--rsvp" type="submit">
                   Send RSVP into the orchard
                 </button>
-                <p id="submission-status" class="submission-status" aria-live="polite"></p>
+                <p id="submission-status" class="submission-status" aria-live="polite">
+                  Enter your name, choose an answer, and pick a fruit alias to send your RSVP.
+                </p>
               </div>
             </form>
             <p id="rsvp-deadline" class="rsvp-deadline">Placeholder RSVP deadline: September 18</p>
             <p id="rsvp-backend-note" class="backend-note">
-              Once live, the guest wall refreshes after the RSVP file lands in the repo and GitHub Pages redeploys.
+              Once live, each RSVP is written into the repo as its own JSON file, and the host log refreshes automatically.
             </p>
           </div>
 
-          <aside class="panel attendee-wall" data-reveal aria-labelledby="attendee-heading">
-            <p id="attendee-kicker" class="eyebrow">Seen In The Orchard</p>
-            <h2 id="attendee-heading" class="section__heading attendee-wall__heading">
-              Fruit names already whispering back.
+          <aside class="panel rsvp-notes" aria-labelledby="notes-heading">
+            <p id="notes-kicker" class="eyebrow">What Happens Next</p>
+            <h2 id="notes-heading" class="section__heading rsvp-notes__heading">
+              Your RSVP goes to the host log, not a public wall.
             </h2>
-            <p id="attendee-body" class="section__copy attendee-wall__copy">
-              This wall only shows confirmed fruit pseudonyms who said yes to the invitation.
+            <p id="notes-body" class="section__copy rsvp-notes__copy">
+              This page is now focused on a clear RSVP flow. The important part is saving each response to the repo.
             </p>
-            <ul id="attendee-list" class="attendee-list" aria-live="polite"></ul>
-            <p id="attendee-empty" class="attendee-empty">No confirmed aliases have bloomed yet. Yours could be the first.</p>
+            <ol id="notes-list" class="note-list" aria-label="What happens after you RSVP">
+              <li class="note-list__item">Your real name is saved for the host in the repo-side RSVP files.</li>
+              <li class="note-list__item">Your fruit alias is still chosen on the page for mood and identity.</li>
+              <li class="note-list__item">The site no longer depends on live attendee counts or public guest lists.</li>
+              <li class="note-list__item">If the backend is not configured yet, the submit button stays disabled on purpose.</li>
+            </ol>
           </aside>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" data-reveal>
+    <footer class="site-footer">
       <p id="footer-note">
-        Built for GitHub Pages. Live RSVPs are written into repo files via Staticman once the endpoint is configured.
+        Built for GitHub Pages. Live RSVPs are written into repo files through a small Worker once the endpoint is configured.
       </p>
     </footer>
+
+    <noscript>
+      <div class="noscript-banner">
+        This invite now shows its main content without JavaScript, but the alias generator and live RSVP saving still need JavaScript turned on.
+      </div>
+    </noscript>
 
     <script src="site-config.js"></script>
     <script>
@@ -230,10 +332,6 @@
         return copy;
       };
 
-      const statusCopyByValue = new Map(
-        siteConfig.rsvp.attendingOptions.map((option) => [option.value, option.publicLabel])
-      );
-
       const fruitByKey = new Map(siteConfig.aliasGenerator.fruits.map((fruit) => [fruit.key, fruit]));
 
       const createFruitAvatar = (fruitKey, labelText = "") => {
@@ -248,13 +346,6 @@
 
         avatar.append(glyph);
         return avatar;
-      };
-
-      const createStatusBadge = (value) => {
-        const badge = document.createElement("span");
-        badge.className = "status-badge status-badge--" + value;
-        badge.textContent = statusCopyByValue.get(value) ?? value;
-        return badge;
       };
 
       document.title = siteConfig.page.title;
@@ -288,10 +379,9 @@
       setText("rsvp-submit", siteConfig.rsvp.submitLabel);
       setText("rsvp-deadline", siteConfig.rsvp.deadline);
       setText("rsvp-backend-note", siteConfig.rsvp.backendNote);
-      setText("attendee-kicker", siteConfig.rsvp.attendeeKicker);
-      setText("attendee-heading", siteConfig.rsvp.attendeeHeading);
-      setText("attendee-body", siteConfig.rsvp.attendeeBody);
-      setText("attendee-empty", siteConfig.rsvp.attendeeEmpty);
+      setText("notes-kicker", siteConfig.rsvp.notesKicker);
+      setText("notes-heading", siteConfig.rsvp.notesHeading);
+      setText("notes-body", siteConfig.rsvp.notesBody);
       setText("footer-note", siteConfig.footer.note);
 
       const guestNameInput = byId("guest-name");
@@ -326,6 +416,7 @@
       setMeta("twitter-image-alt", siteConfig.page.socialImageAlt);
 
       const detailGrid = byId("detail-grid");
+      detailGrid.textContent = "";
       siteConfig.details.facts.forEach((fact, index) => {
         const card = document.createElement("article");
         card.className = "detail-card";
@@ -347,7 +438,17 @@
         detailGrid.append(card);
       });
 
+      const notesList = byId("notes-list");
+      notesList.textContent = "";
+      siteConfig.rsvp.notes.forEach((noteText) => {
+        const item = document.createElement("li");
+        item.className = "note-list__item";
+        item.textContent = noteText;
+        notesList.append(item);
+      });
+
       const journeySteps = byId("journey-steps");
+      journeySteps.textContent = "";
       siteConfig.journey.steps.forEach((step, index) => {
         const card = document.createElement("article");
         card.className = "journey-card";
@@ -369,6 +470,7 @@
       });
 
       const revealList = byId("reveal-lines");
+      revealList.textContent = "";
       siteConfig.reveal.lines.forEach((line, index) => {
         const item = document.createElement("li");
         item.className = "reveal-lines__item";
@@ -377,48 +479,17 @@
         revealList.append(item);
       });
 
-      let revealedCount = 0;
-      const revealButton = byId("reveal-button");
-      const revealItems = Array.from(revealList.children);
-
-      const updateRevealButtonLabel = () => {
-        if (revealedCount >= revealItems.length) {
-          revealButton.textContent = siteConfig.reveal.completedLabel;
-          revealButton.disabled = true;
-          revealButton.setAttribute("aria-disabled", "true");
-          return;
-        }
-
-        revealButton.textContent =
-          siteConfig.reveal.buttonLabels[revealedCount] ??
-          siteConfig.reveal.buttonLabels[siteConfig.reveal.buttonLabels.length - 1];
-      };
-
-      revealButton.addEventListener("click", () => {
-        const nextItem = revealItems[revealedCount];
-        if (!nextItem) {
-          return;
-        }
-
-        nextItem.classList.add("is-visible");
-        revealedCount += 1;
-        updateRevealButtonLabel();
-      });
-
-      updateRevealButtonLabel();
-
       const attendingOptions = byId("attending-options");
       const aliasOptions = byId("alias-options");
       const aliasInput = byId("alias-input");
       const avatarKeyInput = byId("avatar-key-input");
       const aliasRegenerateButton = byId("regenerate-aliases");
       const submissionStatus = byId("submission-status");
-      const attendeeList = byId("attendee-list");
-      const attendeeEmpty = byId("attendee-empty");
       const rsvpForm = byId("rsvp-form");
       const submitButton = byId("rsvp-submit");
 
       const renderAttendingOptions = () => {
+        attendingOptions.textContent = "";
         siteConfig.rsvp.attendingOptions.forEach((option, index) => {
           const label = document.createElement("label");
           label.className = "choice-card";
@@ -509,64 +580,8 @@
 
       aliasRegenerateButton.addEventListener("click", renderAliasOptions);
 
-      const clearAttendees = () => {
-        attendeeList.textContent = "";
-      };
-
-      const renderAttendees = (entries) => {
-        clearAttendees();
-
-        if (!entries.length) {
-          attendeeEmpty.hidden = false;
-          return;
-        }
-
-        attendeeEmpty.hidden = true;
-
-        entries.forEach((entry) => {
-          const item = document.createElement("li");
-          item.className = "attendee-item";
-
-          const avatar = createFruitAvatar(entry.avatarKey, entry.alias);
-
-          const copy = document.createElement("div");
-          copy.className = "attendee-item__copy";
-
-          const alias = document.createElement("p");
-          alias.className = "attendee-item__alias";
-          alias.textContent = entry.alias;
-
-          const meta = document.createElement("div");
-          meta.className = "attendee-item__meta";
-          meta.append(createStatusBadge(entry.attending));
-
-          copy.append(alias, meta);
-          item.append(avatar, copy);
-          attendeeList.append(item);
-        });
-      };
-
-      const loadPublicAttendees = async () => {
-        try {
-          const response = await fetch(siteConfig.rsvp.backend.publicAttendeesPath, {
-            cache: "no-store"
-          });
-
-          if (!response.ok) {
-            throw new Error("attendee wall unavailable");
-          }
-
-          const payload = await response.json();
-          const entries = Array.isArray(payload) ? payload : payload.attendees || [];
-          renderAttendees(entries.filter((entry) => entry.attending === "attending"));
-        } catch (error) {
-          renderAttendees([]);
-        }
-      };
-
       renderAttendingOptions();
       renderAliasOptions();
-      loadPublicAttendees();
 
       const isConfiguredEntryUrl = (value) =>
         /^https?:\/\//.test(value) && !value.includes("YOUR-") && !value.includes("example.com");
@@ -598,11 +613,12 @@
           return;
         }
 
-        const payload = new FormData();
-        payload.set("name", nameValue);
-        payload.set("alias", selectedAlias.alias);
-        payload.set("avatarKey", selectedAlias.fruitKey);
-        payload.set("attending", selectedAttending.value);
+        const payload = {
+          name: nameValue,
+          alias: selectedAlias.alias,
+          avatarKey: selectedAlias.fruitKey,
+          attending: selectedAttending.value
+        };
 
         submitButton.disabled = true;
         setSubmissionMessage(siteConfig.rsvp.submittingMessage, "");
@@ -610,10 +626,11 @@
         try {
           const response = await fetch(siteConfig.rsvp.backend.entryUrl, {
             method: "POST",
-            body: payload,
             headers: {
-              Accept: "application/json"
-            }
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
           });
 
           if (!response.ok) {
@@ -632,30 +649,6 @@
           submitButton.disabled = !isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl);
         }
       });
-
-      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const revealables = document.querySelectorAll("[data-reveal]");
-
-      if (motionQuery.matches) {
-        revealables.forEach((node) => node.classList.add("is-visible"));
-      } else {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.18 }
-        );
-
-        revealables.forEach((node) => observer.observe(node));
-        window.setTimeout(() => {
-          revealables.forEach((node) => node.classList.add("is-visible"));
-        }, 1200);
-      }
     </script>
   </body>
 </html>

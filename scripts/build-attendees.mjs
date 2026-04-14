@@ -3,7 +3,6 @@ import path from "node:path";
 
 const root = process.cwd();
 const submissionsDir = path.join(root, ".github", "rsvps", "submissions");
-const publicAttendeesPath = path.join(root, "data", "public-attendees.json");
 const guestLogPath = path.join(root, ".github", "rsvps", "guest-log.json");
 
 const readSubmissionFiles = async () => {
@@ -95,26 +94,13 @@ const main = async () => {
     (left, right) => new Date(right.submittedAt).getTime() - new Date(left.submittedAt).getTime()
   );
 
-  const confirmedGuests = latestGuests.filter((guest) => guest.attending === "attending");
-
-  const publicAttendees = {
-    updatedAt: new Date().toISOString(),
-    count: confirmedGuests.length,
-    attendees: confirmedGuests.map(({ alias, avatarKey, attending, submittedAt }) => ({
-      alias,
-      avatarKey,
-      attending,
-      submittedAt
-    }))
-  };
-
   const guestLog = {
     updatedAt: new Date().toISOString(),
     count: latestGuests.length,
     guests: latestGuests
   };
 
-  await Promise.all([writeJson(publicAttendeesPath, publicAttendees), writeJson(guestLogPath, guestLog)]);
+  await writeJson(guestLogPath, guestLog);
 };
 
 main().catch((error) => {
