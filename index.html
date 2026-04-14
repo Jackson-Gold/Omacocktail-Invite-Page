@@ -184,53 +184,136 @@
               </fieldset>
 
               <div class="field">
-                <div class="field__row">
-                  <div>
-                    <p id="alias-heading" class="field__label">Choose a fruit pseudonym</p>
-                    <p id="alias-intro" class="field__hint">Three names appear at once. Choose one and let the rest vanish.</p>
-                  </div>
-                  <button id="regenerate-aliases" class="button button--ghost button--small" type="button">
-                    New names
-                  </button>
-                </div>
+                <p id="alias-heading" class="field__label">Choose a fruit pseudonym</p>
+                <p id="alias-intro" class="field__hint">Nine names wait below. Choose one.</p>
                 <input id="alias-input" name="alias" type="hidden" value="Midnight Fig" />
                 <input id="avatar-key-input" name="avatarKey" type="hidden" value="fig" />
                 <div id="alias-options" class="alias-grid" aria-labelledby="alias-heading">
-                  <button class="alias-option is-selected" type="button" data-alias="Midnight Fig" aria-pressed="true">
+                  <button
+                    class="alias-option is-selected"
+                    type="button"
+                    data-alias="Midnight Fig"
+                    data-fruit-key="fig"
+                    aria-pressed="true"
+                  >
                     <span class="fruit-avatar fruit-avatar--fig" aria-hidden="true"></span>
                     <span class="alias-option__copy">
                       <span class="alias-option__title">Midnight Fig</span>
                     </span>
                   </button>
-                  <button class="alias-option" type="button" data-alias="Velvet Plum" aria-pressed="false">
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Velvet Plum"
+                    data-fruit-key="plum"
+                    aria-pressed="false"
+                  >
                     <span class="fruit-avatar fruit-avatar--plum" aria-hidden="true"></span>
                     <span class="alias-option__copy">
                       <span class="alias-option__title">Velvet Plum</span>
                     </span>
                   </button>
-                  <button class="alias-option" type="button" data-alias="Secret Cherry" aria-pressed="false">
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Secret Cherry"
+                    data-fruit-key="cherry"
+                    aria-pressed="false"
+                  >
                     <span class="fruit-avatar fruit-avatar--cherry" aria-hidden="true"></span>
                     <span class="alias-option__copy">
                       <span class="alias-option__title">Secret Cherry</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Shadow Pomegranate"
+                    data-fruit-key="pomegranate"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--pomegranate" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Shadow Pomegranate</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Bruised Blackberry"
+                    data-fruit-key="blackberry"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--blackberry" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Bruised Blackberry</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Ember Blood Orange"
+                    data-fruit-key="blood-orange"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--blood-orange" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Ember Blood Orange</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Silken Mulberry"
+                    data-fruit-key="mulberry"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--mulberry" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Silken Mulberry</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Gilded Quince"
+                    data-fruit-key="quince"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--quince" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Gilded Quince</span>
+                    </span>
+                  </button>
+                  <button
+                    class="alias-option"
+                    type="button"
+                    data-alias="Thorned Fig"
+                    data-fruit-key="fig"
+                    aria-pressed="false"
+                  >
+                    <span class="fruit-avatar fruit-avatar--fig" aria-hidden="true"></span>
+                    <span class="alias-option__copy">
+                      <span class="alias-option__title">Thorned Fig</span>
                     </span>
                   </button>
                 </div>
               </div>
 
               <p id="rsvp-helper" class="field__hint field__hint--strong">
-                Your name and chosen alias are stored in the repo RSVP log for the host.
+                Choose a fruit name, then text the organizer.
               </p>
 
               <div class="form-actions">
-                <button id="rsvp-submit" class="button button--solid button--rsvp" type="submit">Send RSVP</button>
+                <button id="rsvp-submit" class="button button--solid button--rsvp" type="submit">Show RSVP line</button>
                 <p id="submission-status" class="submission-status" aria-live="polite">
-                  Name yourself. Choose a shadow. Send the reply.
+                  Text the organizer your fruit alias to RSVP.
                 </p>
               </div>
             </form>
             <p id="rsvp-deadline" class="rsvp-deadline">RSVP before the candles are lit.</p>
-            <p id="rsvp-backend-note" class="backend-note">
-              Once live, each RSVP is written into the repo as its own JSON file, and the host log refreshes automatically.
+            <p id="organizer-note" class="organizer-note">
+              Text the organizer your fruit alias to RSVP.
             </p>
           </div>
         </div>
@@ -238,14 +321,12 @@
     </main>
 
     <footer class="site-footer">
-      <p id="footer-note">
-        Built for GitHub Pages. Live RSVPs are written into repo files through a small Worker once the endpoint is configured.
-      </p>
+      <p id="footer-note">Built for GitHub Pages.</p>
     </footer>
 
     <noscript>
       <div class="noscript-banner">
-        This invite now shows its main content without JavaScript, but the alias generator and live RSVP saving still need JavaScript turned on.
+        This invite works without the live RSVP flow. Choose a fruit alias and text it to the organizer.
       </div>
     </noscript>
 
@@ -266,16 +347,6 @@
         if (node && typeof value === "string") {
           node.setAttribute("content", value);
         }
-      };
-
-      const fruitByKey = new Map(siteConfig.aliasGenerator.fruits.map((fruit) => [fruit.key, fruit]));
-
-      const createFruitAvatar = (fruitKey) => {
-        const fruit = fruitByKey.get(fruitKey) ?? siteConfig.aliasGenerator.fruits[0];
-        const avatar = document.createElement("span");
-        avatar.className = "fruit-avatar fruit-avatar--" + fruit.key;
-        avatar.setAttribute("aria-hidden", "true");
-        return avatar;
       };
 
       document.title = siteConfig.page.title;
@@ -301,11 +372,10 @@
       setText("attending-legend", siteConfig.rsvp.attendingLegend);
       setText("alias-heading", siteConfig.rsvp.aliasHeading);
       setText("alias-intro", siteConfig.rsvp.aliasIntro);
-      setText("regenerate-aliases", siteConfig.rsvp.regenerateLabel);
       setText("rsvp-helper", siteConfig.rsvp.helper);
       setText("rsvp-submit", siteConfig.rsvp.submitLabel);
       setText("rsvp-deadline", siteConfig.rsvp.deadline);
-      setText("rsvp-backend-note", siteConfig.rsvp.backendNote);
+      setText("organizer-note", siteConfig.rsvp.organizerNote);
       setText("footer-note", siteConfig.footer.note);
 
       const guestNameInput = byId("guest-name");
@@ -367,7 +437,6 @@
       const aliasOptions = byId("alias-options");
       const aliasInput = byId("alias-input");
       const avatarKeyInput = byId("avatar-key-input");
-      const aliasRegenerateButton = byId("regenerate-aliases");
       const submissionStatus = byId("submission-status");
       const rsvpForm = byId("rsvp-form");
       const submitButton = byId("rsvp-submit");
@@ -403,31 +472,7 @@
         });
       };
 
-      const pickRandomItems = (list, count) => {
-        const picked = [];
-        const used = new Set();
-        while (picked.length < count && used.size < list.length) {
-          const index = Math.floor(Math.random() * list.length);
-          if (used.has(index)) {
-            continue;
-          }
-          used.add(index);
-          picked.push(list[index]);
-        }
-        return picked;
-      };
-
-      const pickAliasOptions = () => {
-        const fruits = pickRandomItems(siteConfig.aliasGenerator.fruits, 3);
-        const adjectives = pickRandomItems(siteConfig.aliasGenerator.adjectives, 3);
-
-        return fruits.map((fruit, index) => ({
-          alias: adjectives[index] + " " + fruit.label,
-          fruitKey: fruit.key
-        }));
-      };
-
-      let currentAliasOptions = [];
+      const aliasButtons = Array.from(aliasOptions.querySelectorAll(".alias-option"));
       let selectedAlias = null;
 
       const selectAlias = (option) => {
@@ -435,60 +480,32 @@
         aliasInput.value = option.alias;
         avatarKeyInput.value = option.fruitKey;
 
-        Array.from(aliasOptions.children).forEach((node) => {
+        aliasButtons.forEach((node) => {
           const matches = node.getAttribute("data-alias") === option.alias;
           node.classList.toggle("is-selected", matches);
           node.setAttribute("aria-pressed", String(matches));
         });
       };
 
-      const renderAliasOptions = () => {
-        currentAliasOptions = pickAliasOptions();
-        aliasOptions.textContent = "";
-
-        currentAliasOptions.forEach((option) => {
-          const button = document.createElement("button");
-          button.type = "button";
-          button.className = "alias-option";
-          button.setAttribute("data-alias", option.alias);
-          button.setAttribute("aria-pressed", "false");
-          button.addEventListener("click", () => selectAlias(option));
-
-          const avatar = createFruitAvatar(option.fruitKey);
-
-          const copy = document.createElement("span");
-          copy.className = "alias-option__copy";
-
-          const title = document.createElement("span");
-          title.className = "alias-option__title";
-          title.textContent = option.alias;
-
-          copy.append(title);
-          button.append(avatar, copy);
-          aliasOptions.append(button);
-        });
-
-        selectAlias(currentAliasOptions[0]);
-      };
-
-      aliasRegenerateButton.addEventListener("click", renderAliasOptions);
-
       renderAttendingOptions();
-      renderAliasOptions();
-
-      const isConfiguredEntryUrl = (value) =>
-        /^https?:\/\//.test(value) && !value.includes("YOUR-") && !value.includes("example.com");
+      aliasButtons.forEach((button) => {
+        button.addEventListener("click", () =>
+          selectAlias({
+            alias: button.getAttribute("data-alias"),
+            fruitKey: button.getAttribute("data-fruit-key")
+          })
+        );
+      });
+      selectAlias({
+        alias: aliasButtons[0]?.getAttribute("data-alias") || aliasInput.value,
+        fruitKey: aliasButtons[0]?.getAttribute("data-fruit-key") || avatarKeyInput.value
+      });
 
       const setSubmissionMessage = (message, tone = "") => {
         submissionStatus.textContent = message;
         submissionStatus.dataset.tone = tone;
       };
-
-      if (!isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl)) {
-        submitButton.disabled = true;
-        submitButton.setAttribute("aria-disabled", "true");
-        setSubmissionMessage(siteConfig.rsvp.backendMissingMessage, "warning");
-      }
+      setSubmissionMessage(siteConfig.rsvp.statusLine, "");
 
       rsvpForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -501,46 +518,13 @@
           return;
         }
 
-        if (!isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl)) {
-          setSubmissionMessage(siteConfig.rsvp.backendMissingMessage, "warning");
-          return;
-        }
+        const attendingCopy =
+          siteConfig.rsvp.attendingOptions.find((option) => option.value === selectedAttending.value)?.label || selectedAttending.value;
 
-        const payload = {
-          name: nameValue,
-          alias: selectedAlias.alias,
-          avatarKey: selectedAlias.fruitKey,
-          attending: selectedAttending.value
-        };
-
-        submitButton.disabled = true;
-        setSubmissionMessage(siteConfig.rsvp.submittingMessage, "");
-
-        try {
-          const response = await fetch(siteConfig.rsvp.backend.entryUrl, {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          });
-
-          if (!response.ok) {
-            throw new Error("submission failed");
-          }
-
-          setSubmissionMessage(siteConfig.rsvp.successMessage, "success");
-          rsvpForm.reset();
-          renderAliasOptions();
-          Array.from(attendingOptions.querySelectorAll('input[name="attending"]')).forEach((input) => {
-            input.checked = input.value === siteConfig.rsvp.defaultAttending;
-          });
-        } catch (error) {
-          setSubmissionMessage(siteConfig.rsvp.errorMessage, "error");
-        } finally {
-          submitButton.disabled = !isConfiguredEntryUrl(siteConfig.rsvp.backend.entryUrl);
-        }
+        setSubmissionMessage(
+          `${siteConfig.rsvp.readyPrefix} "${nameValue} - ${attendingCopy} - ${selectedAlias.alias}"`,
+          "success"
+        );
       });
     </script>
   </body>

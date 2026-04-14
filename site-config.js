@@ -65,17 +65,14 @@ const siteConfig = {
     namePlaceholder: "Enter your name",
     attendingLegend: "Will you enter the orchard?",
     aliasHeading: "Choose a fruit pseudonym",
-    aliasIntro: "Three names appear at once. Choose one and let the rest vanish.",
-    regenerateLabel: "New names",
-    helper: "Your name and chosen alias are stored in the repo RSVP log for the host.",
-    submitLabel: "Send RSVP",
+    aliasIntro: "Nine names wait below. Choose one.",
+    helper: "Choose a fruit name, then text the organizer.",
+    submitLabel: "Show RSVP line",
     deadline: "RSVP before the candles are lit.",
-    backendNote: "Once live, each RSVP is written into the repo as its own JSON file, and the host log is refreshed automatically.",
-    backendMissingMessage: "Live saving is not enabled yet. Add your Cloudflare Worker URL in site-config.js to make this form write RSVP files into the repo.",
+    organizerNote: "Text the organizer your fruit alias to RSVP.",
     validationMessage: "Add your name, choose your attendance, and select a fruit alias first.",
-    submittingMessage: "Sending your RSVP into the orchard...",
-    successMessage: "Your RSVP was saved. The host log file in the repo will update after the sync workflow runs.",
-    errorMessage: "The orchard could not write your RSVP. Check the Worker URL and repo setup, then try again.",
+    statusLine: "Text the organizer your fruit alias to RSVP.",
+    readyPrefix: "Text the organizer:",
     defaultAttending: "attending",
     attendingOptions: [
       {
@@ -88,40 +85,10 @@ const siteConfig = {
         label: "I cannot make it",
         description: "Not this harvest."
       }
-    ],
-    backend: {
-      entryUrl: "https://omacocktail.workers.dev/submit",
-      adminLogPath: ".github/rsvps/guest-log.json"
-    }
-  },
-  aliasGenerator: {
-    adjectives: [
-      "Velvet",
-      "Midnight",
-      "Gilded",
-      "Shadow",
-      "Cinder",
-      "Lunar",
-      "Blackglass",
-      "Thorned",
-      "Silken",
-      "Ember",
-      "Bruised",
-      "Secret"
-    ],
-    fruits: [
-      { key: "fig", label: "Fig" },
-      { key: "pomegranate", label: "Pomegranate" },
-      { key: "plum", label: "Plum" },
-      { key: "blackberry", label: "Blackberry" },
-      { key: "blood-orange", label: "Blood Orange" },
-      { key: "cherry", label: "Cherry" },
-      { key: "mulberry", label: "Mulberry" },
-      { key: "quince", label: "Quince" }
     ]
   },
   footer: {
-    note: "Built for GitHub Pages. Live RSVPs are written into repo files through a small Worker once the endpoint is configured."
+    note: "Built for GitHub Pages."
   }
 };
 
