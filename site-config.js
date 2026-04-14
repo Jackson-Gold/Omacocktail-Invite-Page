@@ -132,7 +132,7 @@ const siteConfig = {
       }
     ],
     backend: {
-      entryUrl: "https://YOUR-WORKER.your-subdomain.workers.dev/submit",
+      entryUrl: "https://omacocktail.workers.dev/submit",
       adminLogPath: ".github/rsvps/guest-log.json"
     }
   },
