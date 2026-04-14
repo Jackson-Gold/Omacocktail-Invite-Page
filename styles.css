@@ -501,52 +501,21 @@ select {
   color: rgba(206, 184, 164, 0.7);
 }
 
-.choice-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.choice-card {
-  position: relative;
-}
-
-.choice-card__input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-}
-
-.choice-card__body {
-  display: grid;
-  gap: 0.45rem;
-  min-height: 100%;
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  background:
-    linear-gradient(180deg, rgba(255, 244, 232, 0.03), rgba(255, 244, 232, 0.015)),
-    rgba(16, 8, 18, 0.76);
-  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
-}
-
-.choice-card__title {
-  color: #f6eadf;
-}
-
-.choice-card__input:checked + .choice-card__body {
-  border-color: var(--line-strong);
-  background:
-    radial-gradient(circle at top right, rgba(216, 179, 109, 0.12), transparent 35%),
-    linear-gradient(180deg, rgba(255, 244, 232, 0.05), rgba(255, 244, 232, 0.02)),
-    rgba(22, 10, 24, 0.84);
-  transform: translateY(-1px);
-}
-
 .alias-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
+}
+
+.alias-choice {
+  display: block;
+  cursor: pointer;
+}
+
+.alias-choice__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .alias-option {
@@ -578,7 +547,12 @@ select {
   outline-offset: 3px;
 }
 
-.alias-option.is-selected {
+.alias-choice__input:focus-visible + .alias-option {
+  outline: 2px solid rgba(255, 244, 232, 0.9);
+  outline-offset: 3px;
+}
+
+.alias-choice__input:checked + .alias-option {
   border-color: var(--line-strong);
   background:
     radial-gradient(circle at top right, rgba(216, 179, 109, 0.14), transparent 34%),
@@ -675,7 +649,6 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .choice-grid,
   .alias-grid {
     grid-template-columns: 1fr;
   }

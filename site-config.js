@@ -60,30 +60,24 @@ const siteConfig = {
   rsvp: {
     kicker: "Whisper Your Name",
     heading: "Choose a fruit shadow and answer the orchard.",
-    body: "Give your true name. Choose the fruit shadow that feels like yours.",
-    nameLabel: "Your real name",
-    namePlaceholder: "Enter your name",
-    attendingLegend: "Will you enter the orchard?",
+    body: "Choose the fruit shadow that feels like yours.",
     aliasHeading: "Choose a fruit pseudonym",
     aliasIntro: "Nine names wait below. Choose one.",
     helper: "Choose a fruit name, then text the organizer.",
     deadline: "RSVP before the candles are lit.",
     organizerNote: "Text the organizer your fruit alias to RSVP.",
-    validationMessage: "Add your name, choose your attendance, and select a fruit alias first.",
     organizerBannerLabel: "Text the organizer your fruit alias to RSVP",
     organizerBannerValue: "Midnight Fig",
-    defaultAttending: "attending",
-    attendingOptions: [
-      {
-        value: "attending",
-        label: "Yes, I will be there",
-        description: "Count me beneath the candlelight."
-      },
-      {
-        value: "not-attending",
-        label: "I cannot make it",
-        description: "Not this harvest."
-      }
+    aliasOptions: [
+      { alias: "Midnight Fig", fruitKey: "fig" },
+      { alias: "Velvet Plum", fruitKey: "plum" },
+      { alias: "Secret Cherry", fruitKey: "cherry" },
+      { alias: "Shadow Pomegranate", fruitKey: "pomegranate" },
+      { alias: "Bruised Blackberry", fruitKey: "blackberry" },
+      { alias: "Ember Blood Orange", fruitKey: "blood-orange" },
+      { alias: "Silken Mulberry", fruitKey: "mulberry" },
+      { alias: "Gilded Quince", fruitKey: "quince" },
+      { alias: "Thorned Fig", fruitKey: "fig" }
     ]
   },
   footer: {
