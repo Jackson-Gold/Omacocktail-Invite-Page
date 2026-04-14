@@ -67,12 +67,11 @@ const siteConfig = {
     aliasHeading: "Choose a fruit pseudonym",
     aliasIntro: "Nine names wait below. Choose one.",
     helper: "Choose a fruit name, then text the organizer.",
-    submitLabel: "Show RSVP line",
     deadline: "RSVP before the candles are lit.",
     organizerNote: "Text the organizer your fruit alias to RSVP.",
     validationMessage: "Add your name, choose your attendance, and select a fruit alias first.",
-    statusLine: "Text the organizer your fruit alias to RSVP.",
-    readyPrefix: "Text the organizer:",
+    organizerBannerLabel: "Text the organizer your fruit alias to RSVP",
+    organizerBannerValue: "Midnight Fig",
     defaultAttending: "attending",
     attendingOptions: [
       {

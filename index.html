@@ -106,17 +106,17 @@
           </article>
           <article class="detail-card" style="--card-index: 1">
             <p class="detail-card__label">Date</p>
-            <h3 class="detail-card__value">Saturday, September 26</h3>
+            <h3 class="detail-card__value">Tuesday, April 14</h3>
             <p class="detail-card__note">Placeholder date for the first draft.</p>
           </article>
           <article class="detail-card" style="--card-index: 2">
             <p class="detail-card__label">Time</p>
-            <h3 class="detail-card__value">8:30 PM until late</h3>
+            <h3 class="detail-card__value">7:00 PM until 9:00 PM</h3>
             <p class="detail-card__note">Golden hour fades, then the candles take over.</p>
           </article>
           <article class="detail-card" style="--card-index: 3">
             <p class="detail-card__label">Location</p>
-            <h3 class="detail-card__value">A hidden room in Brooklyn</h3>
+            <h3 class="detail-card__value">239 South 41st</h3>
             <p class="detail-card__note">Replace with the venue name and address.</p>
           </article>
         </div>
@@ -304,11 +304,11 @@
                 Choose a fruit name, then text the organizer.
               </p>
 
-              <div class="form-actions">
-                <button id="rsvp-submit" class="button button--solid button--rsvp" type="submit">Show RSVP line</button>
-                <p id="submission-status" class="submission-status" aria-live="polite">
-                  Text the organizer your fruit alias to RSVP.
+              <div class="organizer-banner" aria-live="polite">
+                <p id="organizer-banner-label" class="organizer-banner__label">
+                  Text the organizer your fruit alias to RSVP
                 </p>
+                <p id="organizer-banner-value" class="organizer-banner__value">Midnight Fig</p>
               </div>
             </form>
             <p id="rsvp-deadline" class="rsvp-deadline">RSVP before the candles are lit.</p>
@@ -373,7 +373,8 @@
       setText("alias-heading", siteConfig.rsvp.aliasHeading);
       setText("alias-intro", siteConfig.rsvp.aliasIntro);
       setText("rsvp-helper", siteConfig.rsvp.helper);
-      setText("rsvp-submit", siteConfig.rsvp.submitLabel);
+      setText("organizer-banner-label", siteConfig.rsvp.organizerBannerLabel);
+      setText("organizer-banner-value", siteConfig.rsvp.organizerBannerValue);
       setText("rsvp-deadline", siteConfig.rsvp.deadline);
       setText("organizer-note", siteConfig.rsvp.organizerNote);
       setText("footer-note", siteConfig.footer.note);
@@ -437,9 +438,8 @@
       const aliasOptions = byId("alias-options");
       const aliasInput = byId("alias-input");
       const avatarKeyInput = byId("avatar-key-input");
-      const submissionStatus = byId("submission-status");
+      const organizerBannerValue = byId("organizer-banner-value");
       const rsvpForm = byId("rsvp-form");
-      const submitButton = byId("rsvp-submit");
 
       const renderAttendingOptions = () => {
         attendingOptions.textContent = "";
@@ -479,6 +479,7 @@
         selectedAlias = option;
         aliasInput.value = option.alias;
         avatarKeyInput.value = option.fruitKey;
+        organizerBannerValue.textContent = option.alias;
 
         aliasButtons.forEach((node) => {
           const matches = node.getAttribute("data-alias") === option.alias;
@@ -488,43 +489,39 @@
       };
 
       renderAttendingOptions();
+      aliasOptions.addEventListener("click", (event) => {
+        const button = event.target.closest(".alias-option");
+        if (!button) {
+          return;
+        }
+
+        selectAlias({
+          alias: button.getAttribute("data-alias"),
+          fruitKey: button.getAttribute("data-fruit-key")
+        });
+      });
+
       aliasButtons.forEach((button) => {
-        button.addEventListener("click", () =>
+        button.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") {
+            return;
+          }
+
+          event.preventDefault();
           selectAlias({
             alias: button.getAttribute("data-alias"),
             fruitKey: button.getAttribute("data-fruit-key")
-          })
-        );
+          });
+        });
       });
+
       selectAlias({
         alias: aliasButtons[0]?.getAttribute("data-alias") || aliasInput.value,
         fruitKey: aliasButtons[0]?.getAttribute("data-fruit-key") || avatarKeyInput.value
       });
 
-      const setSubmissionMessage = (message, tone = "") => {
-        submissionStatus.textContent = message;
-        submissionStatus.dataset.tone = tone;
-      };
-      setSubmissionMessage(siteConfig.rsvp.statusLine, "");
-
-      rsvpForm.addEventListener("submit", async (event) => {
+      rsvpForm.addEventListener("submit", (event) => {
         event.preventDefault();
-
-        const selectedAttending = rsvpForm.querySelector('input[name="attending"]:checked');
-        const nameValue = guestNameInput.value.trim();
-
-        if (!nameValue || !selectedAttending || !selectedAlias) {
-          setSubmissionMessage(siteConfig.rsvp.validationMessage, "warning");
-          return;
-        }
-
-        const attendingCopy =
-          siteConfig.rsvp.attendingOptions.find((option) => option.value === selectedAttending.value)?.label || selectedAttending.value;
-
-        setSubmissionMessage(
-          `${siteConfig.rsvp.readyPrefix} "${nameValue} - ${attendingCopy} - ${selectedAlias.alias}"`,
-          "success"
-        );
       });
     </script>
   </body>
